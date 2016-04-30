@@ -1,0 +1,3 @@
+rootProject.name = 'jest_test'
+
+include ':app'
