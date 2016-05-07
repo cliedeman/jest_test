@@ -7,26 +7,38 @@
     "test": "jest"
   },
   "jest": {
-    "scriptPreprocessor": "node_modules/react-native/jestSupport/preprocessor.js",
-    "setupEnvScriptFile": "node_modules/react-native/jestSupport/env.js",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "packager/react-packager/src/Activity/"
-    ],
+    "globals": {
+      "__DEV__": true,
+      "__RCTProfileIsProfiling": false
+    },
+    "setupEnvScriptFile": "jestSupport/env.js",
+    "haste": {
+      "defaultPlatform": "ios",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "providesModuleNodeModules": [
+        "react",
+        "react-native"
+      ]
+    },
     "testFileExtensions": [
       "js"
     ],
     "unmockedModulePathPatterns": [
       "promise",
-      "source-map"
+      "source-map",
+      "react-native"
     ]
   },
   "dependencies": {
     "react": "^0.14.8",
-    "react-native": "^0.24.1"
+    "react-native": "^0.25.1"
   },
   "devDependencies": {
     "jest-cli": "^12.0.2",
-    "watchman": "^0.1.8"
+    "babel-jest": "^12.0.2",
+    "babel-cli": "^6.5.2"
   }
 }

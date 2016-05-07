@@ -1,0 +1,1 @@
+Sample React Native with Jest Testing Project
